@@ -1,23 +1,44 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+const listeningMusicAnimationVariants = {
+  initial: {
+    opacity: 0,
+    translateX: "60%",
+    scale: 1.2,
+  },
+  animate: {
+    opacity: 1,
+    translateX: "50%",
+    scale: 1.35,
+    translateY: ["1rem", "0.2rem"],
+    transition: {
+      duration: 0.4,
+      type: "spring",
+      stiffness: 100,
+      delay: 0.1,
+    },
+  },
+  exit: {
+    opacity: 0,
+    translateX: "60%",
+    scale: 1.2,
+    transition: {
+      duration: 0.3,
+      type: "spring",
+      stiffness: 100,
+    },
+  },
+};
+
 function ListeningMusicSvg({ styles }) {
   return (
     <motion.div
+      variants={listeningMusicAnimationVariants}
       className={styles}
-      initial={{ opacity: 0, translateX: "60%", scale: 1.2 }}
-      animate={{
-        opacity: 1,
-        translateX: "50%",
-        scale: 1.35,
-        translateY: ["1rem", "0.2rem"],
-      }}
-      transition={{
-        duration: 0.4,
-        type: "spring",
-        stiffness: 100,
-        delay: 0.1,
-      }}
+      exit="exit"
+      initial="initial"
+      animate="animate"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
