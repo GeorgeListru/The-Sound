@@ -6,7 +6,25 @@
     .input-placeholder::placeholder {
         @apply font-medium text-custom-blue-300 opacity-75
     }
+
+    .section-header {
+        @apply font-semibold text-3xl text-custom-blue-400 uppercase mt-8
+    }
+
+    .song-card {
+        @apply font-semibold text-white flex justify-between bg-custom-blue-300 py-2 px-4 w-[20%] text-lg
+        cursor-pointer hover:opacity-90 transition-opacity duration-200 ease-in-out mt-3
+    }
+
+    .timeline-slider::-webkit-slider-thumb, .timeline-slider::-moz-range-thumb {
+        @apply w-5 h-2 appearance-none border-0 bg-custom-blue-200 transition-all duration-150 ease-in-out hover:w-10;
+    }
+
+    .timeline-slider {
+        @apply h-3 bg-custom-blue-300 px-1 cursor-pointer
+    }
 }
+
 
 body {
     margin: 0;

@@ -7,27 +7,38 @@ from .models import Profile, Playlist, PlaylistSong, Song, Artist
 
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
+        model = Profile
         fields = "__all__"
 
 
 class PlaylistSerializer(serializers.ModelSerializer):
     class Meta:
+        model = Playlist
         fields = "__all__"
 
 
 class PlaylistSongSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = "__all__"
-
-
-class SongSerializer(serializers.ModelSerializer):
-    class Meta:
-        fields = "__all__"
+        model = PlaylistSong
+        fields = ['id', 'date_added', 'position', 'song']
 
 
 class ArtistSerializer(serializers.ModelSerializer):
     class Meta:
+        model = Artist
         fields = "__all__"
+
+
+class SongSerializer(serializers.ModelSerializer):
+    # file = serializers.SerializerMethodField(read_only=True)
+    artist = ArtistSerializer(read_only=True, many=True)
+
+    class Meta:
+        model = Song
+        fields = "__all__"
+
+    # def get_file(self, obj):
+    #     return open(obj.file.get_file_path(), "rb")
 
 
 class UserSerializer(serializers.ModelSerializer):

@@ -6,7 +6,7 @@ import Label from "../../components/Label";
 import Button from "../../components/Button/Button";
 import { motion } from "framer-motion";
 import { useNavigate, Link } from "react-router-dom";
-import { RegisterPageVariants } from "./RegisterAnimations";
+import { AuthenticatePageVariants } from "../../animations/AuthenticatePageVariants";
 
 function Register(props) {
   const navigate = useNavigate();
@@ -40,7 +40,7 @@ function Register(props) {
 
   return (
     <motion.div
-      variants={RegisterPageVariants}
+      variants={AuthenticatePageVariants}
       initial={"initial"}
       animate={"animate"}
       exit={"exit"}

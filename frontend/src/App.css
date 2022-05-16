@@ -6,4 +6,8 @@ body, .App {
   position: fixed;
 }
 
+* {
+  outline: none;
+}
+
 /*# sourceMappingURL=App.css.map */

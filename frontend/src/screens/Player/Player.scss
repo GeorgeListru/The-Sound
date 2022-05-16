@@ -1,0 +1,58 @@
+.Profile-Link {
+  color: yellow;
+  margin-top: auto;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-left: auto;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: yellow;
+    opacity: 0.9;
+  }
+}
+
+.profile-dropdown {
+  position: relative;
+  margin-top: auto;
+  margin-bottom: 0.2rem;
+}
+
+.profile-dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 2rem;
+  border-radius: 0.15rem;
+  box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-0.2rem);
+  transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.profile-dropdown-menu-active {
+  pointer-events: auto;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.profile-arrow {
+  font-size: 0.8rem !important;
+  margin-left: 0.1rem !important;
+  font-weight: 900;
+  transition: transform 0.15s ease-in-out;
+  vertical-align: center;
+}
+
+.profile-arrow-active {
+  transform: rotate(90deg);
+}
+
+.profile-dropdown-item {
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+  padding: 0.25rem 0;
+}

@@ -1,4 +1,4 @@
-export const RegisterPageVariants = {
+export const AuthenticatePageVariants = {
   initial: { originY: 0, scaleY: 0 },
   animate: {
     scaleY: 1,

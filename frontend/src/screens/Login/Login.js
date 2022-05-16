@@ -6,7 +6,7 @@ import Label from "../../components/Label";
 import Button from "../../components/Button/Button";
 import { motion } from "framer-motion";
 import { useNavigate, Link } from "react-router-dom";
-import { LoginPageVariants } from "./LoginVariants";
+import { AuthenticatePageVariants } from "../../animations/AuthenticatePageVariants";
 import { login } from "../../redux/LoginDataSlice";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -33,13 +33,13 @@ function Login(props) {
 
     LoginRequest().then((response) => {
       dispatch(login(response.data));
-      navigate("/player");
+      navigate("/player/explore");
     });
   }
 
   return (
     <motion.div
-      variants={LoginPageVariants}
+      variants={AuthenticatePageVariants}
       initial={"initial"}
       animate={"animate"}
       exit={"exit"}
